@@ -1,0 +1,67 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Add your product details</h2>
+    <br>
+      
+    <form method="post" action="/index/secondhand"  enctype="multipart/form-data" class="needs-validation" novalidate >
+     <div class="mb-3">
+        <label for="productName" class="form-label">Product name:</label>
+      <input type="text" name="productName" id="productName"  required placeholder="Enter your Productname" class="form-control">
+      <div class="valid-feedback">looks good</div>
+      <div class="invalid-feedback">Product name should be valid</div>
+      </div> 
+        <div class="row">
+            <div class="mb-3 col-md-4">
+        <label for="sellingPrice" class="form-label">selling Price:</label>
+      <input type="number" name="sellingPrice" id="sellingPrice"  required placeholder="Enter Lovely sellingPrice" class="form-control">
+      <div class="valid-feedback">sellingPrice looks good</div>
+      <div class="invalid-feedback">sellingPrice should be valid</div>
+      </div> 
+      <div class="mb-3 col-md-8">
+        <label for="originalPrice" class="form-label">original Price:</label>
+      <input type="number" name="originalPrice" id="originalPrice"  required placeholder="Enter originalPrice" class="form-control">
+      <div class="valid-feedback">originalPrice looks good</div>
+      <div class="invalid-feedback">originalPrice should be valid</div>
+      </div> 
+        </div>
+
+      <div class="mb-3">
+      <label for="description" class="form-label">description:</label>
+      <textarea name="description" class="form-control" id="description" placeholder="Enter description"  required ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">description should be valid</div>
+    </div>
+    
+ <div class="row">
+         <div class="mb-3 col-md-4">
+          <label for="productCondition" class="form-label">product Condition:</label>
+      <input  name="productCondition"  required  id="productCondition" class="form-control" placeholder="Enter product Condition">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">product Condition should be valid</div>    
+    </div>
+    
+        <div class="mb-3  col-md-8">
+     <label for="productPurchaseDate" class="form-label">Originally Purchase Date:</label>
+     <input type="date" name="productPurchaseDate" id="productPurchaseDate"  required    class="form-control" placeholder="Enter Date">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Date should be valid</div>
+    </div>
+       </div>
+
+       <div class="mb-3">
+      <label for="productExpiryDate" class="form-label">product Expiry Date:</label>
+      <input type="date"class="form-control"   name="productExpiryDate" id="productExpiryDate" placeholder="Enter product Expiry date(if possible)" required>
+      </div>
+
+    <div class="mb-3">
+      <label for="imageUrl" class="form-label">Upload an image of product:</label>
+      <input type="file"class="form-control" name="imageUrl"   id="imageUrl"  required>
+      </div>
+      <button id="Mylovelybtn" class="btn btn-dark first-type">Add</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>

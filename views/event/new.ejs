@@ -1,0 +1,61 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Create new event</h2>
+    <br>
+      
+    <form method="post" action="/index/event" enctype="multipart/form-data" class="needs-validation" novalidate >
+     <div class="mb-3">
+        <label for="eventName" class="form-label">event name:</label>
+      <input type="text" name="eventName" id="eventName"  required placeholder="Enter your event name" class="form-control">
+      <div class="valid-feedback">event name looks good</div>
+      <div class="invalid-feedback">event name should be valid</div>
+      </div> 
+        <div class="mb-3">
+        <label for="title" class="form-label">title:</label>
+      <input type="text" name="title" id="title"  required placeholder="Enter catchy title" class="form-control">
+      <div class="valid-feedback">Title looks good</div>
+      <div class="invalid-feedback">Title should be valid</div>
+      </div> 
+      <div class="mb-3">
+      <label for="description" class="form-label">description:</label>
+      <textarea name="description" class="form-control" id="description" placeholder="Enter description"  required ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">description should be valid</div>
+    </div>
+    
+
+
+ <div class="row">
+         <div class="mb-3 col-md-4">
+          <label for="Location" class="form-label">Location:</label>
+      <input  name="Location"  required  id="Location" class="form-control" placeholder="Enter Location">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Location should be valid</div>    
+    </div>
+        <div class="mb-3  col-md-8">
+     <label for="eventDate" class="form-label">Event Date:</label>
+     <input type="date" name="eventDate" id="eventDate"  required    class="form-control" placeholder="Enter Date">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">event Date  should be valid</div>
+    </div>
+       </div>
+
+       <div class="mb-3">
+      <label for="eventTime" class="form-label">eventTime:</label>
+      <input type="time"class="form-control"   name="eventTime" id="eventTime" placeholder="12:00" required>
+      </div>
+
+    <div class="mb-3">
+      <label for="imageUrl" class="form-label">Upload an Image of event:</label>
+      <input type="file"class="form-control" name="imageUrl"    id="imageUrl"  required>
+      </div>
+      <button id="Mylovelybtn" class="btn btn-dark first-type ">Add</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>
+
+ 

@@ -1,0 +1,44 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Create new Club announcement</h2>
+    <br>
+      
+    <form method="post" action="/index/club/<%= club._id%>?_METHOD=PUT" class="needs-validation" enctype="multipart/form-data" novalidate >
+     <div class="mb-3">
+        <label for="clubName" class="form-label">club name:</label>
+      <input type="text" value="<%=club.clubName%>"   name="clubName" id="clubName"  required placeholder="Enter your club name" class="form-control">
+      <div class="valid-feedback">Club name looks good</div>
+      <div class="invalid-feedback">Club name should be valid</div>
+      </div> 
+        <div class="mb-3">
+        <label for="title" class="form-label">title:</label>
+      <input type="text"  name="title" id="title"  value="<%=club.title%>"  required placeholder="Enter catchy title" class="form-control">
+      <div class="valid-feedback">Title looks good</div>
+      <div class="invalid-feedback">Title should be valid</div>
+      </div> 
+      <div class="mb-3">
+      <label for="description" class="form-label">description:</label>
+      <textarea name="description"   class="form-control" id="description" placeholder="Enter description"  required ><%=club.description%></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">description should be valid</div>
+    </div>
+    
+    <div class="mb-3">
+   Previous Image:
+   <br>
+   <img src="<%= url %>" alt="Image is on high load" height="170px" >
+    </div>
+
+<div class="mb-3">
+      <label for="imageUrl" class="form-label">Upload an image of club:</label>
+      <input type="file"class="form-control" name="imageUrl" id="imageUrl"  required>
+      </div>
+      <button id="Mylovelybtn" class="btn btn-dark first-type ">Edit</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>
+

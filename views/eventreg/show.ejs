@@ -1,0 +1,20 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+<div class="main-complaint-container complaint-div card-good-own">
+
+    <%for(reguser  of event.registereduser){%>
+  <div class="card complaint-div" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">Name:<%= reguser.name %></h5><br>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Branch:<%=reguser.branch %></h6><br>
+   <h6 class="card-subtitle mb-2 text-body-secondary">Year: <%= reguser.year %><sup>th</sup> year</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Roll number:<%= reguser.roll%></h6>
+    <p class="card-text">Mobile-number:<%= reguser.mobile%></p>
+     <p class="card-text">Email-id :<%= reguser.email %></p>
+</div>
+</div>
+   <%  }%>
+
+
+</div>
+</div>

@@ -1,0 +1,42 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+
+   <div class="club-show-details">
+    <div class="club-show-img">
+       <img src="<%=event.imageUrl%>" alt="image is  unable to load">
+    </div>
+    <div class="club-show-desc">
+    <b>Posted By: <%= event.owner.name %></b><br>
+     <b> <%= event.eventName %></b><br>
+    <%= event.title %> <br><br>
+      <%= event.description %><br><br>
+      Location:<b><%= event.Location %></b><br>
+      Date and Time of Event: <b><%= event.eventDate %> and <%= event.eventTime %>  </b><br>
+      
+    </div>
+        <% if(currUser && currUser._id.equals(event.owner._id)){%>
+    <div class="club-show-action">
+        <form  style="display: inline;" action="/index/event/<%= event._id %>/edit" >
+            <button id="Mylovelybtn" class="btn btn-dark first-type club-edit">Edit</button>
+        </form>
+        <form method="post" style="display: inline;"action="/index/event/<%= event._id %>?_METHOD=DELETE">
+            <button id="Mylovelybtn" class="btn btn-dark scnd-type" >Delete</button>
+        </form>
+    </div>
+<%}%>
+  <hr>
+  <div class="club-show-action">
+        <form  style="display: inline;" action="/index/event/<%= event._id %>/register" >
+            <button id="Mylovelybtn" class="btn btn-primary third-type">Register</button>
+        </form>
+        <br>
+        <br>
+        <% if(currUser && currUser._id.equals(event.owner._id)){%>
+        <form  style="display: inline;"action="/index/event/<%= event._id %>/show">
+            <button id="Mylovelybtn" class="btn btn-success fourth-type" >Show registered student</button>
+        </form>
+        <%}%>
+    </div>
+  </div>
+
+

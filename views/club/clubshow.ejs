@@ -1,0 +1,25 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+
+   <div class="club-show-details">
+    <div class="club-show-img">
+       <img src="<%=club.imageUrl%>" alt="image is  unable to load">
+    </div>
+    <div class="club-show-desc">
+     <b> <%= club.clubName %></b><br>
+      <b>Posted By: <%= club.owner.name %></b><br>
+    <%= club.title %> <br><br>
+      <%= club.description %><br>
+    </div>
+    <% if(currUser && currUser._id.equals(club.owner._id)){%>
+    <div class="club-show-action">
+        <form  style="display: inline;" action="/index/club/<%= club._id %>/edit" >
+            <button id="Mylovelybtn" class="btn first-type btn-dark club-edit">Edit</button>
+        </form>
+        <form method="post" style="display: inline;"action="/index/club/<%= club._id %>?_METHOD=DELETE">
+            <button id="Mylovelybtn" class="btn btn-dark scnd-type" >Delete</button>
+        </form>
+    </div>
+     <%}%>
+     <hr>
+   </div>

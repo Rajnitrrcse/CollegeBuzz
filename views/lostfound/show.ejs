@@ -1,0 +1,38 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+
+   <div class="club-show-details">
+    <div class="club-show-img">
+       <img src="<%=lostfound.imageUrl%>" alt="image is unable to load">
+    </div>
+    <div class="club-show-desc">
+      Found by:  <b> <%= lostfound.owner.name %></b><br>
+     <b> <%= lostfound.title %></b><br>
+      <%= lostfound.description %><br>
+      Found At :<b><%= lostfound.foundAt %></b><br>
+      
+    </div>
+    <% if(currUser && currUser._id.equals(lostfound.owner._id)){%>
+    <div class="club-show-action">
+        <form  style="display: inline;" action="/index/lostfound/<%= lostfound._id %>/edit" >
+            <button id="Mylovelybtn" class="btn btn-dark club-edit first-type">Edit</button>
+        </form>
+        <form method="post" style="display: inline;"action="/index/lostfound/<%= lostfound._id %>?_METHOD=DELETE">
+            <button id="Mylovelybtn" class="btn btn-dark scnd-type" >Delete</button>
+        </form>
+    </div>
+     <%}%>
+     <hr>
+     <div class="club-show-action">
+        <form  style="display: inline;" action="/index/lostfound/<%= lostfound._id %>/claim" >
+            <button id="Mylovelybtn" class="btn btn-primary third-type">Claim</button>
+        </form>
+        <br>
+        <br>
+        <% if(currUser && currUser._id.equals(lostfound.owner._id)){%>
+        <form  style="display: inline;"action="/index/lostfound/<%= lostfound._id %>/show">
+            <button id="Mylovelybtn" class="btn btn-success fourth-type" >Show requested Claim</button>
+        </form>
+        <%}%>
+    </div> 
+   </div>

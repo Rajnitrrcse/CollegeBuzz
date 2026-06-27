@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/index"><i class="fa-solid fa-compass" style="color: #2563EB;"></i></a>
+    <button id="Mylovelybtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link  active"   href="/index">Explore</a>
+        
+        
+     <!-- Example single danger button -->
+<%if(!currUser){%>
+<div class="btn-group">
+  <button type="button"   id="Mylovelybtn"   class="btn scnd-type admin dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Admin
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/index/user/signup/admin">Signup</a></li>
+    <li><a class="dropdown-item" href="/index/user/login/admin">Login</a></li>
+  </ul>
+</div>
+<%}%>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+   <div class="navbar-nav ms-auto me-4">
+         <!-- <a class="nav-link" href="/listings/new">Airbnb your home</a> -->
+     <% if(!currUser) {%>
+          <a class="nav-link "  href="/index/user/login"><b>Login</b></a> &nbsp;&nbsp;
+        <a class="nav-link " href="/index/user/signup"><b>Signup</b></a>
+   <% }%>
+   <% if(currUser) {%>
+<a class="nav-link " href="/index/user/logout"><b>Logout</b></a>
+ <% }%>
+      </div>
+</nav>

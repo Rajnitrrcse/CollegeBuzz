@@ -1,0 +1,44 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+
+   <div class="club-show-details">
+    <div class="club-show-img">
+       <img src="<%=secondhand.imageUrl%>" alt="image is  unable to load">
+    </div>
+    <div class="club-show-desc">
+    Posted by:<b> <%= secondhand.owner.name %></b><br>
+     <b> <%= secondhand.productName %></b><br>
+    Selling price: &#8377;<%= secondhand.sellingPrice.toLocaleString("en-IN") %> <br><br>
+  original Price:&#8377; <%= secondhand.originalPrice.toLocaleString("en-IN") %> <br><br>
+      <%= secondhand.description %><br><br>
+     Condition iof the product: &nbsp;<b><%= secondhand.productCondition %></b><br>
+     <% if(secondhand.productPurchaseDate){%>
+      Originally product purchase date: &nbsp;<b><%= secondhand.productPurchaseDate %>   </b><br> <%}%>
+         <% if(secondhand.productExpiryDate){%>  Product expiry date: &nbsp;<b><%= secondhand.productExpiryDate %> </b> <br><%}%>
+      
+    </div>
+
+    <% if(currUser && currUser._id.equals(secondhand.owner._id)){%>
+    <div class="club-show-action">
+        <form  style="display: inline;" action="/index/secondhand/<%= secondhand._id %>/edit" >
+            <button id="Mylovelybtn" class="btn btn-dark club-edit first-type">Edit</button>
+        </form>
+        <form method="post" style="display: inline;"action="/index/secondhand/<%= secondhand._id %>?_METHOD=DELETE">
+            <button id="Mylovelybtn" class="btn btn-dark scnd-type" >Delete</button>
+        </form>
+    </div>
+     <%}%>
+     <hr>
+     <div class="club-show-action">
+        <form  style="display: inline;" action="/index/secondhand/<%= secondhand._id %>/purchase" >
+            <button id="Mylovelybtn" class="btn btn-primary third-type">Purchase</button>
+        </form>
+        <br>
+        <br>
+        <% if(currUser && currUser._id.equals(secondhand.owner._id)){%>
+        <form  style="display: inline;"action="/index/secondhand/<%= secondhand._id %>/show">
+            <button id="Mylovelybtn" class="btn btn-success fourth-type" >Show requested Purchase</button>
+        </form>
+        <%}%>
+    </div> 
+   </div>

@@ -1,0 +1,27 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+<div class="form-div">
+        <div >
+            <form method="get" action="/index/complaint/new" class="new-form">
+           <button id="Mylovelybtn" class="btn new-club first-type">Register New complaint</button>
+             </form>
+        </div>
+    </div>
+
+<div class="main-complaint-container card-good-own">
+ 
+ <% for(complaint of complaints){%>
+   <% if(currUser && (currUser._id.equals(complaint.owner._id)||(currUser.id_admin))){%>
+<div class="card complaint-div" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">Against:<%= complaint.opposite_party_details %></h5><br>
+    <h6 class="card-subtitle mb-2 text-body-secondary"><%= complaint.facts %></h6>
+    <p class="card-text"><%= complaint.specifics %></p>
+    <a href="/index/complaint/<%= complaint._id %>" class="complaint-card-link">View</a>
+  </div>
+</div>
+ <% } %>   <%}%>
+</div>
+
+<br class="breaking-line">
+

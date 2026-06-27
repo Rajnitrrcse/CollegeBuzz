@@ -1,0 +1,40 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Helps A Needy</h2>
+    <br>
+      
+    <form method="post" action="/index/lostfound"  enctype="multipart/form-data" class="needs-validation" novalidate >
+     
+        <div class="mb-3">
+        <label for="title" class="form-label">title:</label>
+      <input type="text" name="title" id="title"  required placeholder="Enter catchy title" class="form-control">
+      <div class="valid-feedback">Title looks good</div>
+      <div class="invalid-feedback">Title should be valid</div>
+      </div> 
+      <div class="mb-3">
+      <label for="description" class="form-label">description:</label>
+      <textarea name="description" class="form-control" id="description" placeholder="Enter description"  required ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">description should be valid</div>
+    </div>
+    
+ 
+         <div class="mb-3 ">
+          <label for="foundAt" class="form-label">Found-At:</label>
+      <input  name="foundAt"  required  id="foundAt" class="form-control" placeholder="Enter Found-At">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">foundAt should be valid</div>    
+    </div>
+        
+    <div class="mb-3">
+      <label for="imageUrl" class="form-label">Upload An Image of the Item:</label>
+      <input type="file"class="form-control" name="imageUrl"   id="imageUrl"  required>
+      </div>
+      <button id="Mylovelybtn" class="btn btn-dark first-type">Add</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>

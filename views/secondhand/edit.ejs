@@ -1,0 +1,77 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Edit Product Details</h2>
+    <br>
+      
+    <form method="post"   enctype="multipart/form-data"  action="/index/secondhand/<%= secondhand._id%>?_METHOD=PUT" class="needs-validation" novalidate >
+     <div class="mb-3">
+        <label for="productName" class="form-label">Product name:</label>
+      <input type="text" value="<%=secondhand.productName%>"   name="productName" id="productName"  required class="form-control">
+      <div class="valid-feedback">Product name looks good</div>
+      <div class="invalid-feedback">Product name should be valid</div>
+      </div> 
+        <div class="row">
+            <div class="mb-3 col-md-8">
+        <label for="sellingPrice" class="form-label">sellingPrice:</label>
+      <input type="number"  name="sellingPrice" id="sellingPrice"  value="<%=secondhand.sellingPrice%>"  required  class="form-control">
+      <div class="valid-feedback">sellingPrice looks good</div>
+      <div class="invalid-feedback">sellingPrice should be valid</div>
+      </div> 
+       <div class="mb-3 col-md-8">
+        <label for="originalPrice" class="form-label">original Price:</label>
+      <input type="number" name="originalPrice" id="originalPrice" value="<%=secondhand.originalPrice%>"  required  class="form-control">
+      <div class="valid-feedback">originalPrice looks good</div>
+      <div class="invalid-feedback">originalPrice should be valid</div>
+      </div> 
+        </div>
+<div class="mb-3">
+      <label for="description" class="form-label">description:</label>
+      <textarea name="description"   class="form-control" id="description"   required ><%=secondhand.description%></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">description should be valid</div>
+    </div>
+
+
+<div class="row">
+         <div class="mb-3 col-md-4">
+          <label for="productCondition" class="form-label">product Condition:</label>
+      <input  name="productCondition"  required  id="productCondition" class="form-control" value="<%=secondhand.productCondition%>" >
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">product Condition should be valid</div>    
+    </div>
+    
+        <div class="mb-3  col-md-8">
+     <label for="productPurchaseDate" class="form-label">Originally Purchase Date:</label>
+     <input type="date" name="productPurchaseDate" id="productPurchaseDate"  required    class="form-control" value="<%=secondhand.productPurchaseDate%>" >
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Date should be valid</div>
+    </div>
+       </div>
+
+       <div class="mb-3">
+      <label for="productExpiryDate" class="form-label">product Expiry Date:</label>
+      <input type="date"class="form-control"   name="productExpiryDate" id="productExpiryDate" value="<%=secondhand.productExpiryDate%>"  >
+      </div>
+      
+
+   <div class="mb-3">
+   Previous Image:
+   <br>
+   <img src="<%= url %>" alt="Image is on high load" height="170px">
+    </div>
+
+
+    
+     <div class="mb-3">
+      <label for="imageUrl" class="form-label">upload an image of the product:</label>
+      <input type="file"class="form-control"    name="imageUrl" id="imageUrl"  required>
+      </div>
+      <button id="Mylovelybtn" class="btn btn-dark first-type">Edit</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>
+

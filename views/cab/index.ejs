@@ -1,0 +1,24 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="form-div">
+        <div >
+            <form method="get" action="/index/cab/new" class="new-form">
+           <button id="Mylovelybtn" class="btn new-club first-type">Add Ride</button>
+             </form>
+        </div>
+    </div>
+ <div class="row row-cols-lg-3 rwo-cols-md-2 row-cols-sm-2 mt-4 ms-4 me-4 mb-4 ">
+
+    <% for(cab of cabs){%>
+    <a href="/index/cab/<%= cab._id %>" class="club-index-link"> 
+    <div class="card col club-show">
+  <img src="<%= cab.imageUrl%>" class="card-img-top" alt="..."  style="height: 20rem;">
+<div class="card-img-overlay"></div>
+  <div class="card-body">
+    <p class="card-text">
+       FROM:<b><%= cab.from %></b> <br>
+      TO: <b><%= cab.to %></b> <br>
+    </p>
+  </div>
+</div></a>
+ <% } %></div>  

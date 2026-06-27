@@ -1,0 +1,28 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+<div class="main-complaint-container complaint-div">
+
+<div class="card complaint-div" style="width: 30rem;">
+  <div class="card-body card-good-own">
+
+    <h5 class="card-title">Against:<%= complaint.opposite_party_details %></h5><br>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Facts:<%= complaint.facts %></h6><br>
+   <h6 class="card-subtitle mb-2 text-body-secondary">complaint by: <%= complaint.owner.name %></h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">specifics:<%= complaint.specifics %></h6>
+    <p class="card-text">Relief/Remedy Sought:<%= complaint.relief %></p>
+     <p class="card-text">Contact-details :<%= complaint.contact %></p>
+     <p class="card-text">Register-Contact-details :<%= complaint.owner.email %></p>
+    </div>
+
+   
+    <div class="club-show-action">
+        <form  style="display: inline;" action="/index/complaint/<%= complaint._id %>/edit" >
+            <button id="Mylovelybtn" class="btn btn-dark first-type club-edit">Edit</button>
+        </form>
+        <form method="post" style="display: inline;"action="/index/complaint/<%= complaint._id %>?_METHOD=DELETE">
+            <button id="Mylovelybtn" class="btn btn-dark scnd-type" >Delete</button>
+        </form>
+    </div>
+
+</div>
+</div>

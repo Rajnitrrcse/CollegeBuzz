@@ -1,0 +1,74 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>add a Unforgettable Ride</h2>
+    <br>
+      
+    <form method="post" action="/index/cab" class="needs-validation" novalidate >
+     <div class="mb-3">
+        <label for="Vehicle Company" class="form-label">Vehicle Company:</label>
+      <select class="form-select" name="vehicleCompanies">
+  <option selected value="Rapido">Rapido</option>
+  <option value="Ola">Ola</option>
+  <option value="Uber">Uber</option>
+  <option value="Namma Yatri">Namma Yatri</option>
+  <option value="BluSmart">BluSmart</option>
+  <option value="Quick Ride">Quick Ride</option>
+</select>
+      <div class="invalid-feedback">Vehicle Company should be valid</div>
+      </div> 
+
+            <div class="mb-3">
+      <label for="vehicleType" class="form-label">vehicle Type:</label>
+      <input name="vehicleType" type="text" class="form-control" id="vehicleType" placeholder="Enter vehicle Type"  required >
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">vehicle Type should be valid</div>
+    </div>
+
+
+        <div class="mb-3">
+        <label for="from" class="form-label">from:</label>
+      <input type="text" name="from" id="from"  required placeholder="Enter Starting location" class="form-control">
+      <div class="valid-feedback"> looks good</div>
+      <div class="invalid-feedback">Location should be valid</div>
+      </div> 
+
+      
+      <div class="mb-3">
+      <label for="to" class="form-label">to:</label>
+      <textarea name="to" class="form-control" id="to" placeholder="Enter Ending location"  required ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Location should be valid</div>
+    </div>
+    
+
+
+ <div class="row">
+         <div class="mb-3 col-md-4">
+          <label for="totalPrice" class="form-label">Total Price(INR):</label>
+      <input  name="totalPrice"  required  id="totalPrice" type="number" class="form-control" placeholder="Enter total Price">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">total Price should be valid</div>    
+    </div>
+        <div class="mb-3  col-md-8">
+     <label for="requiredPerson" class="form-label">Required Person:</label>
+     <input type="number" name="requiredPerson" id="requiredPerson"  required    class="form-control" placeholder="Number of person required">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">person count  should be valid</div>
+    </div>
+       </div>
+
+       <div class="mb-3">
+      <label for="departureTime" class="form-label">departure Time:</label>
+      <input type="time"class="form-control"   name="departureTime" id="departureTime" placeholder="12:00" required>
+      </div>
+
+      <button id="Mylovelybtn" class="btn btn-dark  first-type">Add</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>
+
+ 

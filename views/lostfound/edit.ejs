@@ -1,0 +1,54 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Edit Lost Details</h2>
+    <br>
+      
+    <form method="post" enctype="multipart/form-data"  action="/index/lostfound/<%= lostfound._id%>?_METHOD=PUT" class="needs-validation" novalidate >
+
+        <div class="mb-3">
+        <label for="title" class="form-label">title:</label>
+      <input type="text"  name="title" id="title"  value="<%=lostfound.title%>"  required  class="form-control">
+      <div class="valid-feedback">Title looks good</div>
+      <div class="invalid-feedback">Title should be valid</div>
+      </div> 
+
+
+      <div class="mb-3">
+      <label for="description" class="form-label">description:</label>
+      <textarea name="description"   class="form-control" id="description"   required ><%=lostfound.description%></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">description should be valid</div>
+    </div>
+
+
+
+         <div class="mb-3 col-md-4">
+          <label for="foundAt" class="form-label">Found At:</label>
+      <input  name="foundAt"  required  id="foundAt" class="form-control" value="<%= lostfound.foundAt %>">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">foundAt should be valid</div>    
+    </div>
+
+
+   <div class="mb-3">
+   Previous Image:
+   <br>
+   <img src="<%= url %>" alt="Image is on high load" height="170px">
+    </div>
+
+   
+
+<div class="mb-3">
+      <label for="imageUrl" class="form-label">Upload an Image of product:</label>
+      <input type="file"class="form-control"   name="imageUrl" id="imageUrl"  required>
+      </div>
+      <button id="Mylovelybtn" class="btn btn-dark first-type">Edit</button>
+       <br> <br>
+    </form>
+    
+  </div>
+  </div>
+

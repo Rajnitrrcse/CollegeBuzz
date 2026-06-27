@@ -1,0 +1,19 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+<div class="main-complaint-container complaint-div card-good-own">
+
+    <%for(user  of secondhand.purchase){%>
+  <div class="card complaint-div" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">Name:<%= user.name %></h5><br>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Branch:<%=user.branch %></h6><br>
+   <h6 class="card-subtitle mb-2 text-body-secondary">Year: <%= user.year %><sup>th</sup> year</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Roll number:<%= user.roll%></h6>
+    <p class="card-text">Mobile-number:<%= user.mobile%></p>
+     <p class="card-text">Email-id :<%= user.email %></p>
+     <p class="card-text">Description :<%= user.description %></p>
+</div>
+</div>
+   <%  }%>
+
+</div>

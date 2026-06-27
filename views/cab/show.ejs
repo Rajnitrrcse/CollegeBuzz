@@ -1,0 +1,41 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+
+   <div class="club-show-details">
+    <div class="club-show-img">
+       <img src="<%=cab.imageUrl%>" alt="image is  unable to load">
+    </div>
+    <div class="club-show-desc">
+     Posted By: <b> <%= cab.owner.name %></b><br>
+     <b> <%= cab.vehicleCompanies %></b><br>
+     vehicle:<b><%= cab.vehicleType%></b><br>
+     from: <%= cab.from %><br>
+      to:<b><%= cab.to %></b><br>
+      Expected departure Time: <b><%= cab.departureTime %></b><br>
+      Total Price: <b>&#8377;<%= cab.totalPrice.toLocaleString("en-IN") %></b><br/>
+      person Required: <b><%= cab.requiredPerson %></b>
+    </div>
+    <% if(currUser && currUser._id.equals(cab.owner._id)){%>
+    <div class="club-show-action">
+        <form  style="display: inline;" action="/index/cab/<%= cab._id %>/edit" >
+            <button id="Mylovelybtn" class="btn btn-dark first-type club-edit">Edit</button>
+        </form>
+        <form method="post" style="display: inline;"action="/index/cab/<%= cab._id %>?_METHOD=DELETE">
+            <button id="Mylovelybtn" class="btn btn-dark scnd-type" >Delete</button>
+        </form>
+    </div>
+    <%}%>
+     <hr>
+     <div class="club-show-action">
+        <form  style="display: inline;" action="/index/cab/<%= cab._id %>/book" >
+            <button id="Mylovelybtn" class="btn btn-primary third-type">Book</button>
+        </form>
+        <br>
+        <br>
+        <% if(currUser && currUser._id.equals(cab.owner._id)){%>
+        <form  style="display: inline;"action="/index/cab/<%= cab._id %>/show">
+            <button id="Mylovelybtn" class="btn btn-success fourth-type" >Show booking request</button>
+        </form>
+        <%}%>
+    </div> 
+   </div>

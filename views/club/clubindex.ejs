@@ -1,0 +1,24 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="form-div">
+        <div >
+            <form method="get" action="/index/club/new" class="new-form">
+           <button id="Mylovelybtn" class="btn first-type new-club">New club Announcement</button>
+             </form>
+        </div> 
+    </div>
+ <div class="row row-cols-lg-3 rwo-cols-md-2 row-cols-sm-2 mt-4 ms-4 me-4 mb-4 ">
+
+    <% for(club of clubs){%>
+    <a href="/index/club/<%= club._id %>" class="club-index-link"> 
+    <div class="card col club-show">
+  <img src="<%= club.imageUrl%>" class="card-img-top" alt="..."  style="height: 20rem;">
+<div class="card-img-overlay"></div>
+  <div class="card-body">
+    <p class="card-text">
+       <b><%= club.clubName %></b> <br>
+       <b><%= club.title %></b> <br>
+    </p>
+  </div>
+</div></a>
+ <% } %></div>  

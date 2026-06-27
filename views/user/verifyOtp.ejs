@@ -1,0 +1,18 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <br>
+    <h2>Verify OTP</h2>
+    <br>
+
+    <form method="post" action="/index/user/verify-otp">
+      <div class="mb-3">
+        <label for="otp" class="form-label">Enter OTP:</label>
+        <input type="text" name="otp" id="otp" class="form-control" required maxlength="6">
+      </div>
+
+      <button id="Mylovelybtn" class="btn btn-dark first-type">Verify</button>
+    </form>
+  </div>
+</div>

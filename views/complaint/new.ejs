@@ -1,0 +1,65 @@
+<% layout("../views/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+    <div class="col-8 offset-2">
+      <br>
+    <h2>Register Complaint</h2>
+    <br>
+      
+    <form method="post" action="/index/complaint" class="needs-validation" novalidate  >
+    
+        
+
+    <div class="mb-3">
+        <label for="opposite_party_details" class="form-label">details of opposite party:</label>
+      <input type="text" name="opposite_party_details" id="opposite_party_details"  required  placeholder=" details Regarding opposite party" class="form-control">
+      <div class="valid-feedback"> looks good</div>
+      <div class="invalid-feedback"> details of opposite party should be valid</div>
+      </div> 
+
+      
+      <div class="mb-3">
+      <label for="details" class="form-label">Description:</label>
+      <textarea name="details" class="form-control" id="details" required placeholder="Description of complaint" ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Details should be valid</div>
+    </div>
+
+
+        <div class="mb-3">
+      <label for="facts" class="form-label">Enter-facts:</label>
+      <textarea name="facts" class="form-control" id="facts" required  placeholder="facts"></textarea>
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">facts should be valid</div>
+    </div>
+
+
+
+        <div class="mb-3">
+      <label for="specifics" class="form-label">specifics:</label>
+      <input name="specifics" type="text" class="form-control" id="specifics" placeholder=" Extra information like:place,date etc" required >
+        <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">specifics should not be blank</div>
+    </div>
+
+
+    <div class="row">
+         <div class="mb-3 col-md-4">
+          <label for="relief" class="form-label">Relief/Remedy Sought:</label>
+      <input  name="relief"  required  id="relief" class="form-control"  type="text" placeholder="what you want?">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Relief/Remedy Sought should be valid</div>    
+    </div>
+        <div class="mb-3  col-md-8">
+     <label for="contact" class="form-label">Contact-Details:</label>
+     <input type="text" name="contact" id="contact"  required    class="form-control"placeholder="mail/mobile-number">
+         <div class="valid-feedback">Looks good</div>
+      <div class="invalid-feedback">Contact-Details  should be valid</div>
+    </div>
+       </div>
+  
+      <button id="Mylovelybtn" class="btn btn-dark first-type ">Register</button>
+       <br> <br>
+    </form>
+  </div>
+  </div>
