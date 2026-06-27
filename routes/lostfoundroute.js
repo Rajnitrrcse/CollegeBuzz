@@ -1,5 +1,5 @@
 const express= require("express");
-const Lostfound= require("../models/lostfound");
+const Lostfound= require("../models/lostFound");
 const router= express.Router()
 const wrapAsync=require("../utils/wrapAsync");
 const expressError= require("../utils/expressError");
